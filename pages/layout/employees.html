@@ -27,9 +27,19 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
+
+       <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js">
+    </script> <!-- load angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+
+    <!-- ANGULAR -->
+    <!-- all angular resources will be loaded from the /public folder -->
+    <script src="js/app.js"></script>
+    
+    </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body ng-app="myPhotoboothApp" ng-controller="myPhotoboothController"  class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
     <header class="main-header">
@@ -110,7 +120,8 @@
             <div class="box-body">
               <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
               <ul class="todo-list">
-                <li>
+                  
+                <li ng-init="juanEdit = false ; juanDelete=false" ng-hide="juanDelete"> 
                   <!-- drag handle -->
                   <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
@@ -118,75 +129,61 @@
                       </span>
                  
                   <!-- todo text -->
-                  <span class="text">Design a nice theme</span>
-                  
+                  <span class="text" ng-hide="juanEdit">Juan Pedro</span>
+                  <input type="text" ng-show="juanEdit" value="Juan Pedro" >
                   
                   <!-- General tools such as edit or delete-->
                   <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
+                      <button ng-click="juanEdit=false" ng-show="juanEdit"><i class="fa fa-save" ng-show="juanEdit"></i></button>
+                <button ng-click="juanEdit=true" ng-show="!juanEdit"> <i class="fa fa-edit" ></i></button>
+                      <button ng-click="juanDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
-                <li>
+                <li ng-init="rafaelEdit = false ; rafaelDelete=false" ng-hide="rafaelDelete">
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                 
-                  <span class="text">Make the theme responsive</span>
+                  <span class="text" ng-hide="rafaelEdit">Rafael Boglio</span>
+                    <input type="text" ng-show="rafaelEdit" value="Rafael Boglio" >
                    <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
+                     <button ng-click="rafaelEdit=false" ng-show="rafaelEdit"><i class="fa fa-save" ng-show="rafaelEdit"></i></button>
+                <button ng-click="rafaelEdit=true" ng-show="!rafaelEdit"> <i class="fa fa-edit" ></i></button>
+                      <button ng-click="rafaelDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
-                <li>
+                <li ng-init="hectorEdit = false ; hectorDelete=false" ng-hide="hectorDelete">
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                   
-                  <span class="text">Let theme shine like a star</span>
+                  <span class="text" ng-hide="hectorEdit">Hector Ocasio</span>
+                    <input type="text" ng-show="hectorEdit" value="Hector Ocasio" >
+                    
                    <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
+                   <button ng-click="hectorEdit=false" ng-show="hectorEdit"><i class="fa fa-save"></i></button>
+                <button ng-click="hectorEdit=true" ng-show="!hectorEdit"> <i class="fa fa-edit" ></i></button>
+                      <button ng-click="hectorDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
-                <li>
+                <li ng-init="jonathanEdit = false ; jonathanDelete=false" ng-hide="jonathanDelete">
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                   
-                  <span class="text">Let theme shine like a star</span>
+                  <span class="text" ng-hide="jonathanEdit">Jonathan Roman</span>
+                    <input type="text" ng-show="jonathanEdit" value="Jonathan Roman" >
+                    
                    <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
+                   <button ng-click="jonathanEdit=false" ng-show="jonathanEdit"><i class="fa fa-save" ng-show="jonathanEdit"></i></button>
+                <button ng-click="jonathanEdit=true" ng-show="!jonathanEdit"> <i class="fa fa-edit" ></i></button>
+                      <button ng-click="jonathanDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
                   
-                  <span class="text">Check your messages and notifications</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  
-                  <span class="text">Let theme shine like a star</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
               </ul>
             </div>
             <!-- /.box-body -->
