@@ -6,20 +6,39 @@
 *
 *****/
 
-var myPhotoboothApp = angular.module('myPhotoboothApp', []);
+var myPhotoboothApp = angular.module('myPhotoboothApp', ['ngRoute']);
 
+myPhotoboothApp.config(function($routeProvider) {
+		$routeProvider
 
+			// route for the home page
+			.when('/', {
+				templateUrl : 'addEvent.html',
+				controller  : 'myPhotoboothController'
+			})
+
+			// route for the about page
+			.when('/addEvent', {
+				templateUrl : 'addEvent.html',
+				controller  : 'myPhotoboothController'
+			})
+
+			// route for the contact page
+			.when('/contact', {
+				templateUrl : 'addEvent.html',
+				controller  : 'myPhotoboothController'
+			});
+    	});
 
 myPhotoboothApp.controller('myPhotoboothController', function($scope, $window, $location) {
 
   
     $scope.users = [{userId:'emanuel.martinez4@upr.edu', password:'example'}, {userId:'illary.lopes@upr.edu', password:'example'} ];
- $scope.events =[];
 
+      $scope.events = [];
   
     
-
-
+ 
     //function for checking users
     $scope.checkUser = function(userId, password){
             
@@ -38,9 +57,12 @@ myPhotoboothApp.controller('myPhotoboothController', function($scope, $window, $
     //function for checking users
     $scope.addEvent = function(event){
         
-       $scope.events.push(event);
+       // cars.push(event);
+        $scope.events.push(event);
+        //console.log(event);
+        //console.log($scope.events);
     
-        $window.location = 'dashboard.html';
+         $window.location = 'dashboard.html';
            
         }
    

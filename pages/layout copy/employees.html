@@ -27,22 +27,12 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    
-    
-      <!-- JS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script> 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
-
-    <!-- ANGULAR -->
-    <!-- all angular resources will be loaded from the /public folder -->
-    <script src="js/app.js"></script>
-    
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body ng-app="myPhotoboothApp" ng-controller="myPhotoboothController" class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
-  <header class="main-header">
+    <header class="main-header">
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -98,7 +88,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Add Event
+            Full Employee List
         
         </h1>
         
@@ -106,84 +96,106 @@
 
       <!-- Main content -->
       <section class="content">
-      
-    <div class="col-md-12">
-          <!-- Horizontal Form -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Event Information</h3>
+
+    <!-- TO DO List -->
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="ion ion-clipboard"></i>
+
+              <h3 class="box-title">Employee List</h3>
+
+              
             </div>
             <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Event Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Activity name" ng-model="event.eventName" required>
-                  </div>
-                </div>
+            <div class="box-body">
+              <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+              <ul class="todo-list">
+                <li>
+                  <!-- drag handle -->
+                  <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                 
+                  <!-- todo text -->
+                  <span class="text">Design a nice theme</span>
                   
-                   <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label" >Event Date</label>
-                  <div class="col-sm-10">
-                    <input type="date" class="form-control" id="inputPassword3" placeholder="date" ng-model="event.eventDate" required>
-                  </div>
-                </div>
                   
-                  <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Event Location</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Location" ng-model="event.eventLocation" required>
+                  <!-- General tools such as edit or delete-->
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
                   </div>
-                </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                
+                  <span class="text">Make the theme responsive</span>
+                   <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
                   
-                  <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Event Time</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="HH:MM" ng-model="event.eventTime" required>
+                  <span class="text">Let theme shine like a star</span>
+                   <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
                   </div>
-                </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
                   
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Owners Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Owner name" ng-model="event.ownerName" required>
+                  <span class="text">Let theme shine like a star</span>
+                   <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
                   </div>
-                </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
                   
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Owner Phone</label>
-
-                  <div class="col-sm-10">
-                    <input type="tel" class="form-control" id="inputPassword3" placeholder="787-455-4565" ng-model="event.ownerPhone" required>
+                  <span class="text">Check your messages and notifications</span>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
                   </div>
-                </div>
-                  <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Owner Email</label>
-
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputPassword3" placeholder="Email" ng-model="event.ownerEmail" required>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  
+                  <span class="text">Let theme shine like a star</span>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
                   </div>
-                </div>
-                    <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Notes:</label>
-                  <div class="col-sm-10">
-<textarea class="form-control" rows="3" placeholder="Enter ..." ng-model="event.notes" required></textarea>  
-                </div>
-                </div>
-             
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-default" href="dashboard.html">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right" ng-click="addEvent(event)">Add Event</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
+                </li>
+              </ul>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix no-border">
+              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+            </div>
           </div>
-          </div>
-        <!-- /.box -->
+          <!-- /.box -->
+        
       </section>
       <!-- /.content -->
     </div>

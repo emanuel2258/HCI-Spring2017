@@ -35,11 +35,11 @@
 
     <!-- ANGULAR -->
     <!-- all angular resources will be loaded from the /public folder -->
-    <script src="/js/app.js"></script>
+    <script src="js/app.js"></script>
     
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body ng-app="myPhotoboothApp" ng-controller="myPhotoboothController" class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
   <header class="main-header">
@@ -122,7 +122,7 @@
           <div class="small-box bg-white">
             <div class="inner">
                 <br>
-             <a> <h3>New Event</h3></a>
+             <a href="add-event.html"> <h3>New Event</h3></a>
 <br>
          
             </div>
@@ -134,13 +134,13 @@
             
         </div>
         <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
+        <div class="col-lg-4 col-xs-6" ng-repeat="event in events">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <a href="vent-details.html"><h3>Name</h3></a>
+              <a href="vent-details.html"><h3>{{event.eventName}}</h3></a>
 
-              <p>Date</p>
+              <p>{{event.eventDate}}/ {{event.eventTime}}</p>
             </div>
             <div class="icon">
               <i class="ion ion-calendar"></i>

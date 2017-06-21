@@ -28,9 +28,9 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     
-    
       <!-- JS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js">
+    </script> <!-- load angular -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
 
     <!-- ANGULAR -->
@@ -54,7 +54,14 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-           
+
+            <!-- Settings -->
+            <li class="dropdown notifications-menu">
+            <a href="#">
+              <i class="fa fa-cog "></i>
+            </a>
+          </li>
+
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
               <!-- Menu Toggle Button -->
@@ -65,6 +72,7 @@
                 <span class="hidden-xs">Alexander Pierce</span>
               </a>
               <ul class="dropdown-menu">
+                
                 <!-- The user image in the menu -->
                 <li class="user-header">
                   <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -93,12 +101,32 @@
     </nav>
   </header>
   <!-- Full Width Column -->
+    
+    
+      <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Angular Routing Example</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#addEvent"><i class="fa fa-shield"></i> Add Event</a></li>
+        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+    
+    <div ng-view></div>
+    
+    
+    
   <div class="content-wrapper">
     <div class="container">
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Add Event
+          <i class="fa fa-dashboard"></i> Dashboard
         
         </h1>
         
@@ -107,82 +135,42 @@
       <!-- Main content -->
       <section class="content">
       
-    <div class="col-md-12">
-          <!-- Horizontal Form -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Event Information</h3>
+    <div class="row">
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+            
+          <div class="small-box bg-white">
+            <div class="inner">
+                <br>
+             <a href="add-event.html"> <h3>New Event</h3></a>
+<br>
+         
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Event Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Activity name" ng-model="event.eventName" required>
-                  </div>
-                </div>
-                  
-                   <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label" >Event Date</label>
-                  <div class="col-sm-10">
-                    <input type="date" class="form-control" id="inputPassword3" placeholder="date" ng-model="event.eventDate" required>
-                  </div>
-                </div>
-                  
-                  <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Event Location</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Location" ng-model="event.eventLocation" required>
-                  </div>
-                </div>
-                  
-                  <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Event Time</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="HH:MM" ng-model="event.eventTime" required>
-                  </div>
-                </div>
-                  
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Owners Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Owner name" ng-model="event.ownerName" required>
-                  </div>
-                </div>
-                  
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Owner Phone</label>
-
-                  <div class="col-sm-10">
-                    <input type="tel" class="form-control" id="inputPassword3" placeholder="787-455-4565" ng-model="event.ownerPhone" required>
-                  </div>
-                </div>
-                  <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Owner Email</label>
-
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputPassword3" placeholder="Email" ng-model="event.ownerEmail" required>
-                  </div>
-                </div>
-                    <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Notes:</label>
-                  <div class="col-sm-10">
-<textarea class="form-control" rows="3" placeholder="Enter ..." ng-model="event.notes" required></textarea>  
-                </div>
-                </div>
-             
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-default" href="dashboard.html">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right" ng-click="addEvent(event)">Add Event</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
+            <div class="icon">
+              <i class="ion ion-plus"></i>
+            </div>
+            <a class="small-box-footer"></a>
           </div>
+            
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-4 col-xs-6" ng-repeat="event in events">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <a href="vent-details.html"><h3>{{event.eventName}}</h3></a>
+
+              <p>{{event.eventDate}}/ {{event.eventTime}}</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-calendar"></i>
+            </div>
+            <a class="small-box-footer">In process</a>
           </div>
+        </div>
+        <!-- ./col -->
+
+      </div>
         <!-- /.box -->
       </section>
       <!-- /.content -->
