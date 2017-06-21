@@ -305,11 +305,7 @@
               <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
               <ul class="todo-list">
                <li ng-init="juanEdit = false ; juanDelete=false" ng-hide="juanDelete"> 
-                  <!-- drag handle -->
-                  <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+          
                  
                   <!-- todo text -->
                      <input type="checkbox" value="" >
@@ -324,10 +320,7 @@
                   </div>
                 </li>
                 <li ng-init="rafaelEdit = false ; rafaelDelete=false" ng-hide="rafaelDelete">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                
                                  <input type="checkbox" value="">
                   <span class="text" ng-hide="rafaelEdit">Background Display</span>
                     <input type="text" ng-show="rafaelEdit" value="Background Display" >
@@ -338,11 +331,7 @@
                   </div>
                 </li>
                 <li ng-init="hectorEdit = false ; hectorDelete=false" ng-hide="hectorDelete">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                   <input type="checkbox" value="">
+                        <input type="checkbox" value="">
 
                   <span class="text" ng-hide="hectorEdit">Props</span>
                     <input type="text" ng-show="hectorEdit" value="Props" >
@@ -354,10 +343,7 @@
                   </div>
                 </li>
                 <li ng-init="jonathanEdit = false ; jonathanDelete=false" ng-hide="jonathanDelete">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                 
                  <input type="checkbox" value="">
                   <span class="text" ng-hide="jonathanEdit">Tablet</span>
                     <input type="text" ng-show="jonathanEdit" value="Tablet" >
@@ -399,11 +385,7 @@
               <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
               <ul class="todo-list" >
                 <li ng-show="(juanChecked && selectEmployee) || !selectEmployee">
-                  <!-- drag handle -->
-                  <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+             <i class="fa fa-user"></i>
                  
                  <input type="checkbox" ng-model="juanChecked" ng-hide="selectEmployee">
                   <span class="text">Juan Carlos</span>
@@ -411,46 +393,46 @@
                   
                   <!-- General tools such as edit or delete-->
                   <div class="tools">
-                    <i class="fa fa-edit"></i>
+                                          <button data-toggle="modal" data-target="#modal-default4"><i class="fa fa-info" ></i></button>
+
+<!--                    <i class="fa fa-edit"></i>-->
                     <i class="fa fa-trash-o"></i>
                   </div>
                 </li>
                 <li ng-show="(rafaelChecked && selectEmployee) || !selectEmployee">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                   <i class="fa fa-user"></i>
                 
                 <input type="checkbox" ng-model="rafaelChecked" ng-hide="selectEmployee" >
                   <span class="text">Rafael Boglio</span>
                    <div class="tools">
-                    <i class="fa fa-edit"></i>
+                            <button data-toggle="modal" data-target="#modal-default4"><i class="fa fa-info" ></i></button>
+
+<!--                    <i class="fa fa-edit"></i>-->
                     <i class="fa fa-trash-o"></i>
                   </div>
                 </li>
                 <li  ng-show="(hectorChecked && selectEmployee) || !selectEmployee">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                     <i class="fa fa-user"></i>
 
                   <input type="checkbox" ng-model="hectorChecked" ng-hide="selectEmployee">
                   <span class="text">Hector Ocasio</span>
                    <div class="tools">
-                    <i class="fa fa-edit"></i>
+                                           <button data-toggle="modal" data-target="#modal-default4"><i class="fa fa-info" ></i></button>
+
+<!--                    <i class="fa fa-edit">
+</i>-->
                     <i class="fa fa-trash-o"></i>
                   </div>
                 </li>
                 <li  ng-show="(jonathanChecked && selectEmployee) || !selectEmployee">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                     <i class="fa fa-user"></i>
                   
                   <input type="checkbox" ng-model="jonathanChecked" ng-hide="selectEmployee">
                   <span class="text">Jonathan Roman</span>
                    <div class="tools">
-                    <i class="fa fa-edit"></i>
+                                           <button data-toggle="modal" data-target="#modal-default4"><i class="fa fa-info" ></i></button>
+
+<!--                    <i class="fa fa-edit"></i>-->
                     <i class="fa fa-trash-o"></i>
                   </div>
                 </li>
@@ -551,6 +533,54 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+    
+     <div class="modal fade" id="modal-default4" ng-init="editInfo = false">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Employee Info</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        
+                      <input type="email" class="form-control" id="inputName" value="Example Name" ng-disabled="!editInfo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail" value="employee_email@example.com" ng-disabled="!editInfo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Telephone</label>
+
+                    <div class="col-sm-10">
+                      <input type="tel" class="form-control" id="inputName" value="(787)-348-3455" ng-disabled="!editInfo">
+                    </div>
+                  </div>
+                
+                
+                 
+                 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="editInfo = false">Close</button>
+                  <button type="button" class="btn btn-primary" ng-click="editInfo = true" ng-hide="editInfo">Edit Info</button>
+            <button type="button" class="btn btn-primary" ng-click="editInfo = false" ng-show="editInfo">Save Changes</button>
               </div>
             </div>
             <!-- /.modal-content -->

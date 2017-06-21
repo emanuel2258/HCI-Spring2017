@@ -123,10 +123,7 @@
                   
                 <li ng-init="juanEdit = false ; juanDelete=false" ng-hide="juanDelete"> 
                   <!-- drag handle -->
-                  <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                <i class="fa fa-user"></i>
                  
                   <!-- todo text -->
                   <span class="text" ng-hide="juanEdit">Juan Pedro</span>
@@ -134,52 +131,53 @@
                   
                   <!-- General tools such as edit or delete-->
                   <div class="tools">
+                    <button data-toggle="modal" data-target="#modal-default1"><i class="fa fa-info" ></i></button>
                       <button ng-click="juanEdit=false" ng-show="juanEdit"><i class="fa fa-save" ng-show="juanEdit"></i></button>
-                <button ng-click="juanEdit=true" ng-show="!juanEdit"> <i class="fa fa-edit" ></i></button>
+<!--                <button ng-click="juanEdit=true" ng-show="!juanEdit"> <i class="fa fa-edit" ></i></button>-->
                       <button ng-click="juanDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
                 <li ng-init="rafaelEdit = false ; rafaelDelete=false" ng-hide="rafaelDelete">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                     
+                        <i class="fa fa-user"></i>
+                       
                 
                   <span class="text" ng-hide="rafaelEdit">Rafael Boglio</span>
                     <input type="text" ng-show="rafaelEdit" value="Rafael Boglio" >
                    <div class="tools">
+                                           <button data-toggle="modal" data-target="#modal-default1"><i class="fa fa-info" ></i></button>
+
                      <button ng-click="rafaelEdit=false" ng-show="rafaelEdit"><i class="fa fa-save" ng-show="rafaelEdit"></i></button>
-                <button ng-click="rafaelEdit=true" ng-show="!rafaelEdit"> <i class="fa fa-edit" ></i></button>
+<!--                <button ng-click="rafaelEdit=true" ng-show="!rafaelEdit"> <i class="fa fa-edit" ></i></button>-->
                       <button ng-click="rafaelDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
+                  
                 <li ng-init="hectorEdit = false ; hectorDelete=false" ng-hide="hectorDelete">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                   <i class="fa fa-user"></i>
                   
                   <span class="text" ng-hide="hectorEdit">Hector Ocasio</span>
                     <input type="text" ng-show="hectorEdit" value="Hector Ocasio" >
                     
                    <div class="tools">
+                                           <button data-toggle="modal" data-target="#modal-default1"><i class="fa fa-info" ></i></button>
+
                    <button ng-click="hectorEdit=false" ng-show="hectorEdit"><i class="fa fa-save"></i></button>
-                <button ng-click="hectorEdit=true" ng-show="!hectorEdit"> <i class="fa fa-edit" ></i></button>
+<!--                <button ng-click="hectorEdit=true" ng-show="!hectorEdit"> <i class="fa fa-edit" ></i></button>-->
                       <button ng-click="hectorDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
                 <li ng-init="jonathanEdit = false ; jonathanDelete=false" ng-hide="jonathanDelete">
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                      <i class="fa fa-user"></i>
                   
                   <span class="text" ng-hide="jonathanEdit">Jonathan Roman</span>
                     <input type="text" ng-show="jonathanEdit" value="Jonathan Roman" >
                     
                    <div class="tools">
+                                           <button data-toggle="modal" data-target="#modal-default1"><i class="fa fa-info" ></i></button>
+
                    <button ng-click="jonathanEdit=false" ng-show="jonathanEdit"><i class="fa fa-save" ng-show="jonathanEdit"></i></button>
-                <button ng-click="jonathanEdit=true" ng-show="!jonathanEdit"> <i class="fa fa-edit" ></i></button>
+<!--                <button ng-click="jonathanEdit=true" ng-show="!jonathanEdit"> <i class="fa fa-edit" ></i></button>-->
                       <button ng-click="jonathanDelete=true"><i class="fa fa-trash-o"></i></button>
                   </div>
                 </li>
@@ -260,6 +258,54 @@
           <!-- /.modal-dialog -->
         </div>
     
+    <div class="modal fade" id="modal-default1" ng-init="editInfo = false">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Employee Info</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        
+                      <input type="email" class="form-control" id="inputName" value="Example Name" ng-disabled="!editInfo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail" value="employee_email@example.com" ng-disabled="!editInfo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Telephone</label>
+
+                    <div class="col-sm-10">
+                      <input type="tel" class="form-control" id="inputName" value="(787)-348-3455" ng-disabled="!editInfo">
+                    </div>
+                  </div>
+                
+                
+                 
+                 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="editInfo = false">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="editInfo = true" ng-hide="editInfo">Edit Info</button>
+            <button type="button" class="btn btn-primary" ng-click="editInfo = false" ng-show="editInfo">Save Changes</button>
+
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
     
     
 <!-- jQuery 3.1.1 -->

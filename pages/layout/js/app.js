@@ -32,7 +32,6 @@ myPhotoboothApp.controller('myPhotoboothController', function($scope, $window, $
            
         }
     alert("Username or password is incorrect");
-        $window.location = 'dashboard.html';
             }
     
     //function for checking users
