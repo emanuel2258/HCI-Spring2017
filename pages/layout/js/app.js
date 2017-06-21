@@ -42,6 +42,15 @@ myPhotoboothApp.controller('myPhotoboothController', function($scope, $window, $
     
         $window.location = 'dashboard.html';
            
-        }
+    }
+    
+      $scope.hide = false;
+      $scope.checked = false;
+    $scope.checkboxClick = function() {
+      if (checked = true)
+      {$scope.hide = !$scope.hide;}
+      else
+      $scope.hide = !$scope.hide;
+    };
    
 });
