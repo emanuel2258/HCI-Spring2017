@@ -26,9 +26,17 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+   <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js">
+    </script> <!-- load angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+
+    <!-- ANGULAR -->
+    <!-- all angular resources will be loaded from the /public folder -->
+    <script src="js/app.js"></script>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body ng-app="myPhotoboothApp" ng-controller="myPhotoboothController" class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
    <header class="main-header">
@@ -113,18 +121,18 @@
             <div class="box-header with-border">
               <i class="fa fa-info"></i>
 
-              <h3 class="box-title">Event Details</h3>
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-pencil"></i> Edit</button>
+              <h3 class="box-title" ng-init="editing=false">Event Details</h3>
+              <button type="button" class="btn btn-default pull-right" ng-hide="editing" ng-click="editing=true"><i class="fa fa-pencil"></i> Edit</button>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
+            <div class="box-body" ng-hide="editing">
               <dl class="dl-horizontal">
                 <dt>Event Location: </dt>
                 <dd>Centro de convenciones</dd>
                 <dt>Event Date:</dt>
                 <dd>11/03/17</dd>
                 <dt>Event Time:</dt>
-                <dd>2:30 - 6:00</dd>
+                <dd>2:30</dd>
                 <dt>Customer Name:</dt>
                 <dd>Maria de los Angles</dd>
                 <dt>Phone Number:</dt>
@@ -135,6 +143,79 @@
                 <dd>Sweet sixteen with sunflower decorations</dd>
               </dl>
             </div>
+
+<form class="form-horizontal" ng-show="editing">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Event Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Maria's Sweet 16" ng-model="event.eventName" >
+                  </div>
+                </div>
+                  
+
+
+                   <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label" >Event Date</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="11/02/2017" ng-model="event.eventDate" >
+                  </div>
+                </div>
+                  
+                  <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Event Location</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Centro de convenciones" ng-model="event.eventLocation" >
+                  </div>
+                </div>
+                  
+                  <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Event Time</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="2:30" ng-model="event.eventTime" >
+                  </div>
+                </div>
+                  
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Customer Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Maria de los Angles" ng-model="event.ownerName" >
+                  </div>
+                </div>
+                  
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Phone Number</label>
+
+                  <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="inputPassword3" placeholder="(787)567-9928" ng-model="event.ownerPhone" >
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
+
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputPassword3" placeholder="maria.angles@gmail.com" ng-model="event.ownerEmail" >
+                  </div>
+                </div>
+                    <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Notes:</label>
+                  <div class="col-sm-10"><textarea class="form-control" rows="3" placeholder="Sweet sixteen with sunflower decorations" ng-model="event.notes"></textarea>  
+                </div>
+                </div>
+             
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" ng-click="editing=false" class="btn btn-default" href="dashboard.html">Cancel</button>
+                <button type="submit" ng-click="editing=false" class="btn btn-info pull-right" ng-click="addEvent(event)">Save Changes</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+
+
+
+
+            
             <!-- /.box-body -->
           </div>
               </div>
@@ -150,8 +231,12 @@
             <br>
               <span class="info-box-number">Contract</span>
 
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-download"></i> Download</button>
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add</button>
+              <button type="button" class="btn btn-default pull-right"><i class="fa fa-download"></i> Download</button>
+            <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal-default"><i class="fa fa-pencil-square-o"></i> Replace</button>
+
+              <span class="progress-description">File name: MariaDeLosAngelesSignedContract.pdf </span>
+
+            
           
             </div>
             <!-- /.info-box-content -->
@@ -164,8 +249,8 @@
               <br>
               <span class="info-box-number">Receipt</span>
               
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-download"></i> Download</button>
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add</button>
+            <button type="button" class="btn btn-default pull-right" disabled="true"><i class="fa fa-download" ></i> Download</button>
+            <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i> Add</button>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -177,8 +262,9 @@
               <br>
               <span class="info-box-number">Patterns</span>
             
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-download"></i> Download</button>
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add</button>
+            <button type="button" class="btn btn-default pull-right" disabled="true"><i class="fa fa-download"></i> Download</button>
+            <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i> Add</button>
+            
             
             </div>
             <!-- /.info-box-content -->
@@ -191,8 +277,8 @@
               <br>
               <span class="info-box-number">Feedback</span>
             
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-download"></i> Download</button>
-            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add</button>
+            <button type="button" class="btn btn-default pull-right" disabled="true"><i class="fa fa-download"></i> Download</button>
+            <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i> Add</button>
 
             </div>
             <!-- /.info-box-content -->
@@ -302,7 +388,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-check"></i> Select Employee</button>
+              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>Add Item</button>
             </div>
           </div>
           <!-- /.box -->
@@ -434,6 +520,28 @@
   <!-- /.content-wrapper -->
 </div>
 <!-- ./wrapper -->
+
+<div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Upload File</h4>
+              </div>
+              <div class="modal-body">
+                <input type="file" name="file"/>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
 
 <!-- jQuery 3.1.1 -->
 <script src="../../plugins/jQuery/jquery-3.1.1.min.js"></script>
