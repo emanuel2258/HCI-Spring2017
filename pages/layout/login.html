@@ -30,13 +30,12 @@
     
     
       <!-- JS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js">
-    </script> <!-- load angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script> 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
 
     <!-- ANGULAR -->
     <!-- all angular resources will be loaded from the /public folder -->
-    <script src="pages/layout/js/app.js"></script>
+    <script src="js/app.js"></script>
     
     
 </head>
@@ -49,7 +48,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../layout/dashboard.html" method="post">
+    <form method="post">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" ng-model="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
